@@ -18,24 +18,27 @@ $weken = ($_SESSION['array']);
         </div>
         
         <div class="navigation">
-            <table border="1" width="120">
+            <table border="1">
 
 
 
                 <?php
                 foreach ($weken as $waarde) {
-                    $waarde = pathinfo( $waarde )[ 'filename' ];
-                    echo '  <tr>
-                            <td>
-                               
+                    //$waarde = pathinfo($waarde)['filename'];
+                    echo '  
+                            <ul> 
                                   <a href="' . $waarde . '.php">' . $waarde . '</a>
-                                
-                          </td>
-                       </tr>';
+                                     </ul>
+';
                 }
                 ?>
 
             </table>
+        </div>
+        
+        <div class="main">
+            <h2 text-align="center">Week 1</h2>
+            Hier staan de opgaven voor week 1.
         </div>
      
 

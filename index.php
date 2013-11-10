@@ -20,7 +20,9 @@
             while (false !== ($entry = readdir($handle))) {
 
                 if ($entry != "." && $entry != "..") {
-                    if ($ext = end(explode(".", $entry)) == "php") {
+                    $ext = pathinfo($entry, PATHINFO_EXTENSION);
+                    if ($ext == 'php') {
+                        $entry = pathinfo($entry, PATHINFO_FILENAME);
                         $weken[] = $entry;
                     }
                 }
@@ -36,14 +38,12 @@
 
                 <?php
                 foreach ($weken as $waarde) {
-                    $waarde = pathinfo($waarde)['filename'];
-                    echo '  <tr>
-                            <td>
-                             
+                    //$waarde = pathinfo($waarde)['filename'];
+                    echo '  
+                            <ul> 
                                   <a href="' . $waarde . '.php">' . $waarde . '</a>
-                                
-                          </td>
-                       </tr>';
+                                     </ul>
+';
                 }
                 ?>
 

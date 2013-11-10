@@ -1,36 +1,38 @@
-.header {
-    height : 10%;
-    width : 100%;
-    margin-left: 25%;
-    margin-right : 25%;
-    min-width : 400px;
-    background-color : orangered;
-    text-align : center ; 
-    display: inline-block;
-    
+* {
+   margin: 0px;
+   padding: 0px;
 }
 
+.header {
+    height : 10%; 
+    margin-left: 25%;
+    margin-right : 25%;
+    background-color : orangered;
+    text-align : center ; 
+    padding: 0;
+    z-index: 0;
+}
+
+
+
 .navigation {
-    float : left;
+    float : left;    
     height : 90%;
-    width : 7%;
-    margin-left: 25%;    
-    min-width : 138px;
+    width : auto;
+    margin-left: 25%;  
     background-color : grey;
     text-align : center; 
+    z-index: 1;
 }
 
 
 .main{
-
+    overflow:hidden;
     margin-right: 25%;
-    width: 42.75%;
+    margin-left: 25%;
+
     height: 90%;
-    float: left;
-    margin: 0;
-    padding: 0;
-    display: inline;   
-    text-align: justify;
+    z-index: 1;
     background-color: orange;
 }
 
