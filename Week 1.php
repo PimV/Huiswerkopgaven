@@ -1,9 +1,7 @@
 
-<?php 
-
+<?php
 session_start();
 $weken = ($_SESSION['array']);
-
 ?>
 <html>
     <head>
@@ -13,34 +11,36 @@ $weken = ($_SESSION['array']);
         <link rel="stylesheet" type="text/css" href="CSSPortal.css"/>
     </head>
     <body>
-        <div class="header">
-            <h1>Week 1</h1>
-        </div>
-        
-        <div class="navigation">
-            <table border="1">
+        <div id="wrap">
+            <div id="header">
+                <h1>Week 1</h1>
+            </div>
+
+            <div id="navigation">
+                <table border="1">
 
 
 
-                <?php
-                foreach ($weken as $waarde) {
-                    //$waarde = pathinfo($waarde)['filename'];
-                    echo '  
+<?php
+foreach ($weken as $waarde) {
+    //$waarde = pathinfo($waarde)['filename'];
+    echo '  
                             <ul> 
                                   <a href="' . $waarde . '.php">' . $waarde . '</a>
                                      </ul>
 ';
-                }
-                ?>
+}
+?>
 
-            </table>
+                </table>
+            </div>
+
+            <div id="main">
+                <h2 text-align="center">Week 1</h2>
+                Hier staan de opgaven voor week 1.
+            </div>
         </div>
-        
-        <div class="main">
-            <h2 text-align="center">Week 1</h2>
-            Hier staan de opgaven voor week 1.
-        </div>
-     
+
 
     </body>
 </html>

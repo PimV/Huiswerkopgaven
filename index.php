@@ -7,66 +7,68 @@
     </head>
     <body>
 
-        <div class="header">
-            <h1>Home</h1>
-        </div>
+        <div id ="wrap">
+            <div id="header">
+                <h1>Home</h1>
+            </div>
 
-        <?php
-        session_start();
+            <?php
+            session_start();
 
-        $weken = array();
+            $weken = array();
 
-        if ($handle = opendir('.')) {
-            while (false !== ($entry = readdir($handle))) {
+            if ($handle = opendir('.')) {
+                while (false !== ($entry = readdir($handle))) {
 
-                if ($entry != "." && $entry != "..") {
-                    $ext = pathinfo($entry, PATHINFO_EXTENSION);
-                    if ($ext == 'php') {
-                        $entry = pathinfo($entry, PATHINFO_FILENAME);
-                        $weken[] = $entry;
+                    if ($entry != "." && $entry != "..") {
+                        $ext = pathinfo($entry, PATHINFO_EXTENSION);
+                        if ($ext == 'php') {
+                            $entry = pathinfo($entry, PATHINFO_FILENAME);
+                            $weken[] = $entry;
+                        }
                     }
                 }
+                closedir($handle);
             }
-            closedir($handle);
-        }
-        $_SESSION['array'] = $weken;
-        ?>
-        <div class="navigation">
-            <table border="1">
+            $_SESSION['array'] = $weken;
+            ?>
+            <div id="navigation">
+                <table border="1">
 
 
 
-                <?php
-                foreach ($weken as $waarde) {
-                    //$waarde = pathinfo($waarde)['filename'];
-                    echo '  
+                    <?php
+                    foreach ($weken as $waarde) {
+                        //$waarde = pathinfo($waarde)['filename'];
+                        echo '  
                             <ul> 
                                   <a href="' . $waarde . '.php">' . $waarde . '</a>
                                      </ul>
 ';
-                }
-                ?>
+                    }
+                    ?>
 
-            </table>
-        </div>
+                </table>
+            </div>
 
-        <div class="main">
-            <h2 text-align="center">Welkom</h2>
-            Deze pagina is gemaakt door Pim Verlangen en is bedoeld om alle huiswerkopgaven voor het vak PHP weer te geven. 
+            <div id="main">
+                <h2 text-align="center">Welkom</h2>
+                Deze pagina is gemaakt door Pim Verlangen en is bedoeld om alle huiswerkopgaven voor het vak PHP weer te geven. 
 
-            <br/>
-            <br/>
-            U kunt navigeren door de hier links staande links aan te klikken en van daaruit de verschillende deelopdrachten aan te klikken.
+                <br/>
+                <br/>
+                U kunt navigeren door de hier links staande links aan te klikken en van daaruit de verschillende deelopdrachten aan te klikken.
 
-            <br/>
-            <br/>
+                <br/>
+                <br/>
 
-            Veel plezier met het doorlezen!
+                Veel plezier met het doorlezen!
 
-            <br/>
-            <br/>
+                <br/>
+                <br/>
 
-            - Pim Verlangen
+                - Pim Verlangen
+            </div>
         </div>
 
     </body>

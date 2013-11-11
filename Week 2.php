@@ -13,11 +13,12 @@ $weken = ($_SESSION['array']);
         <link rel="stylesheet" type="text/css" href="CSSPortal.css"/>
     </head>
     <body>
-        <div class="header">
+        <div id="wrap">
+        <div id="header">
             <h1>Week 2</h1>
         </div>
         
-        <div class="navigation">
+        <div id="navigation">
             <table border="1">
 
 
@@ -36,9 +37,10 @@ $weken = ($_SESSION['array']);
             </table>
         </div>
         
-        <div class="main">
+        <div id="main">
             <h2 text-align="center">Week 2</h2>
             Hier staan de opgaven voor week 2.
+        </div>
         </div>
      
 
