@@ -16,18 +16,20 @@
             session_start();
 
             $weken = array();
-
+            // if ($handle = opendir('.')) {
             if ($handle = opendir('.')) {
                 while (false !== ($entry = readdir($handle))) {
-
                     if ($entry != "." && $entry != "..") {
                         $ext = pathinfo($entry, PATHINFO_EXTENSION);
-                        if ($ext == 'php') {
+                        if ($ext == "php") {
+                            //$entrystr_replace("_", " ", $entry);
                             $entry = pathinfo($entry, PATHINFO_FILENAME);
+    
                             $weken[] = $entry;
                         }
                     }
                 }
+
                 closedir($handle);
             }
             $_SESSION['array'] = $weken;
@@ -38,13 +40,8 @@
 
 
                     <?php
-                    foreach ($weken as $waarde) {
-                        //$waarde = pathinfo($waarde)['filename'];
-                        echo '  
-                            <ul> 
-                                  <a href="' . $waarde . '.php">' . $waarde . '</a>
-                                     </ul>
-';
+                    foreach ($weken as $waarde) {                        
+                        echo '<ul><a href="'   .'/HuiswerkOpgaven/'. $waarde . '.php">' . $waarde . '</a></ul>';
                     }
                     ?>
 
@@ -53,6 +50,7 @@
 
             <div id="main">
                 <h2 text-align="center">Welkom</h2>
+                <br/>
                 Deze pagina is gemaakt door Pim Verlangen en is bedoeld om alle huiswerkopgaven voor het vak PHP weer te geven. 
 
                 <br/>

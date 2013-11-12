@@ -6,7 +6,7 @@ $weken = ($_SESSION['array']);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Portal - Pim Verlangen</title>
+        <title>Portal - Pim Verlangen - Week 4</title>
 
         <link rel="stylesheet" type="text/css" href="CSSPortal.css"/>
     </head>
@@ -17,22 +17,11 @@ $weken = ($_SESSION['array']);
             </div>
 
             <div id="navigation">
-                <table border="1">
-
-
-
-<?php
-foreach ($weken as $waarde) {
-    //$waarde = pathinfo($waarde)['filename'];
-    echo '  
-                            <ul> 
-                                  <a href="' . $waarde . '.php">' . $waarde . '</a>
-                                     </ul>
-';
-}
-?>
-
-                </table>
+                <?php
+                foreach ($weken as $waarde) {
+                    echo '<ul><a href="' . $waarde . '.php">' . $waarde . '</a></ul>';
+                }
+                ?>
             </div>
 
             <div id="main">
